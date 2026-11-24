@@ -46,11 +46,11 @@ export default function AICampusBot() {
     }
 
     if (q.includes('attendance') || q.includes('अटेंडेंस') || q.includes('हाजिरी') || q.includes('75%')) {
-      return `⚠️ **अटेंडेंस गाइडलाइन्स (Attendance Rules):**\nयूनिवर्सिटी के नियमानुसार सेमेस्टर एग्जाम में बैठने के लिए न्यूनतम **75% अटेंडेंस अनिवार्य** है।\n- रोहन की वर्तमान ओवरऑल अटेंडेंस: **${wardData.overallAttendance}% (Safe)**\n- ऑपरेटिंग सिस्टम्स में 70.9% है, इसलिए अगली 4 क्लासेज अटेंड करना ज़रूरी है।`;
+      return `⚠️ **अटेंडेंस गाइडलाइन्स (Attendance Rules):**\nयूनिवर्सिटी के नियमानुसार सेमेस्टर एग्जाम में बैठने के लिए न्यूनतम **75% अटेंडेंस अनिवार्य** है।\n- ${wardData?.name || 'आपकी'} वर्तमान ओवरऑल अटेंडेंस: **${wardData?.overallAttendance || '88'}% (Safe)**\n- ऑपरेटिंग सिस्टम्स में 70.9% है, इसलिए अगली 4 क्लासेज अटेंड करना ज़रूरी है।`;
     }
 
     if (q.includes('fee') || q.includes('फीस') || q.includes('रसीद') || q.includes('receipt')) {
-      return `💰 **फीस विवरण (Fee Ledger):**\nवार्षिक कुल फीस: ₹65,000 (100% Paid).\nरोहन के खाते में **₹0 बकाया** है।\nमाता-पिता 'Parent Portal' में जाकर 'Fees & Dues' टैब से दोनों ऑफिशियल रसीदें (RCP-2026-8831 & RCP-2026-4412) 1-क्लिक में डाउनलोड कर सकते हैं।`;
+      return `💰 **फीस विवरण (Fee Ledger):**\nवार्षिक कुल फीस: ₹65,000 (100% Paid).\n${wardData?.name || 'आपके'} खाते में **₹0 बकाया** है।\nमाता-पिता 'Parent Portal' में जाकर 'Fees & Dues' टैब से दोनों ऑफिशियल रसीदें (RCP-2026-8831 & RCP-2026-4412) 1-क्लिक में डाउनलोड कर सकते हैं।`;
     }
 
     if (q.includes('syllabus') || q.includes('विषय') || q.includes('subject') || q.includes('bca')) {

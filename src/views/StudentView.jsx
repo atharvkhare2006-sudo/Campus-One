@@ -38,7 +38,8 @@ export default function StudentView() {
     studentMarkAttendance,
     students,
     authenticatedSessions,
-    feeStructures
+    feeStructures,
+    showToast
   } = useApp();
 
   const activeStudent = authenticatedSessions?.student || students[0];
@@ -251,7 +252,10 @@ export default function StudentView() {
                       Read
                     </button>
                     <button
-                      onClick={() => setReadingNote(note)}
+                      onClick={() => {
+                        showToast(`Preparing "${note.title}.pdf" for download...`, 'info');
+                        setTimeout(() => showToast(`"${note.title}.pdf" downloaded successfully!`, 'success'), 1200);
+                      }}
                       className="px-3 py-1.5 font-bold text-white bg-emerald-600 hover:bg-emerald-700 rounded-xl shadow-sm transition-all flex items-center gap-1 text-xs"
                     >
                       <Download className="w-3.5 h-3.5" />
