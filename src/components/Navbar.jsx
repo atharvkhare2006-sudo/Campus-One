@@ -72,12 +72,12 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo & Brand */}
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-700 to-purple-600 flex items-center justify-center text-white shadow-md shadow-indigo-500/20">
+          <div className="flex items-center gap-3 shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-700 to-purple-600 flex items-center justify-center text-white shadow-md shadow-indigo-500/20 shrink-0">
               <GraduationCap className="w-6 h-6" />
             </div>
-            <div>
-              <div className="flex items-center gap-1.5">
+            <div className="shrink-0">
+              <div className="flex items-center gap-1.5 whitespace-nowrap">
                 <span className="text-xl font-extrabold tracking-tight bg-gradient-to-r from-indigo-700 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
                   Campus One
                 </span>
@@ -85,24 +85,11 @@ export default function Navbar() {
                   OS
                 </span>
               </div>
-              <p className="text-[10px] text-slate-400 font-medium hidden sm:block">
+              <p className="text-[10px] text-slate-400 font-medium hidden sm:block whitespace-nowrap">
                 All-in-One Higher Ed & Campus Operating System
               </p>
             </div>
           </div>
-
-          {/* Center: Read-Only Authenticated College Indicator (Switch Box Removed as requested) */}
-          {currentRole === 'college_admin' && activeSession && (
-            <div className="hidden md:flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-blue-50/80 border border-blue-200/80 shadow-xs">
-              <Building2 className="w-4 h-4 text-blue-600" />
-              <span className="text-xs font-bold text-blue-900 truncate max-w-[280px]">
-                {activeCollege.name} ({activeCollege.code})
-              </span>
-              <span className="text-[10px] font-extrabold px-1.5 py-0.5 rounded bg-blue-600 text-white">
-                {activeCollege.city || 'Verified'}
-              </span>
-            </div>
-          )}
 
           {/* Right Action Items */}
           <div className="flex items-center gap-3">
